@@ -28,7 +28,7 @@ import tesla from "./company/tesla.png";
 import exped from "./company/exped.jpeg";
 import freelancer from "./company/freelancer.jpg";
 import upwork from "./company/upwork.png";
-import ap from "./company/ap.png";
+import ap from "./company/AP.png";
 
 import carrent from "./carrent.png";
 import lago from "./lago.png";
