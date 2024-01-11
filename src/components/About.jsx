@@ -45,20 +45,21 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="mt-4 text-secondary text-[24px] max-w-3xl leading-[30px]"
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js with Express and
-        Nestjs. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        In my 5 years experience, I've contributed to various projects, from innovative startups to established tech companies. 
+        My approach combines a deep understanding of modern web technologies with a commitment to delivering high-quality and efficient code.
+      <br />
+      <br />
+        I'm enthusiastic about learning and growing with the ever-evolving tech landscape and am keen to connect with professionals who share a similar passion for technology and innovation.
+
       </motion.p>
 
-      <div className="mt-20 flex flex-wrap gap-10">
+      {/*<div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
-      </div>
+      </div>*/}
     </>
   );
 };

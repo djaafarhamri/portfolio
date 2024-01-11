@@ -139,13 +139,13 @@ const experiences = [
     ],
   },
   {
-    title: "Lead Backend Engineer",
+    title: "Lead Full Stack Engineer",
     company_name: "ALGERIA PARTNERS",
     icon: ap,
     iconBg: "#383E56",
-    date: "Jun 2023 - Sep 2023",
+    date: "Apr 2023 - Feb 2024",
     points: [
-      "Developing and maintaining web server applications using Node js and other related technologies.",
+      "Developing and maintaining web applications using Node js in the backend and Nextjs in the frontend.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
@@ -222,6 +222,27 @@ const projects = [
     ],
     image: chat,
     source_code_link: "https://github.com/djaafarhamri/chat-app",
+  },
+  {
+    name: "algeria digital market",
+    description:
+      "A dynamic B2B multivendor marketplace connecting businesses globally.",
+    tags: [
+      {
+        name: "nodejs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "nextjs",
+        color: "green-text-gradient",
+      },
+      {
+        name: "prisma",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: ap,
+    project_link: "https://algeriadigitalmarket.com",
   },
   {
     name: "Ecommerce API",
