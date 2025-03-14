@@ -14,9 +14,10 @@ interface ProjectCardProps {
   imageUrl: string
   demoUrl?: string
   repoUrl?: string
+  achievements: string[]
 }
 
-export default function ProjectCard({ title, description, tags, imageUrl, demoUrl, repoUrl }: ProjectCardProps) {
+export default function ProjectCard({ title, description, tags, imageUrl, demoUrl, repoUrl, achievements }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -67,9 +68,8 @@ export default function ProjectCard({ title, description, tags, imageUrl, demoUr
           <div className="mb-4 space-y-2">
             <h4 className="text-sm font-semibold text-primary">Key Achievements:</h4>
             <ul className="list-disc pl-5 text-sm text-muted-foreground">
-              <li>Improved performance by 40% through code optimization</li>
-              <li>Implemented responsive design for all device sizes</li>
-              <li>Integrated with multiple third-party APIs</li>
+              <li>{achievements[0]}</li>
+              <li>{achievements[1]}</li>
             </ul>
           </div>
 

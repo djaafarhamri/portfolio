@@ -1,38 +1,38 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import ProjectCard from "@/components/project-card"
-import SkillBadge from "@/components/skill-badge"
-import { ThemeToggle } from "@/components/theme-toggle"
-import CustomCursor from "@/components/custom-cursor"
-import ParallaxSection from "@/components/parallax-section"
-import { motion } from "framer-motion"
-import AboutImage from "@/components/about-image"
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import ProjectCard from "@/components/project-card";
+import SkillBadge from "@/components/skill-badge";
+import { ThemeToggle } from "@/components/theme-toggle";
+import CustomCursor from "@/components/custom-cursor";
+import ParallaxSection from "@/components/parallax-section";
+import { motion } from "framer-motion";
+import AboutImage from "@/components/about-image";
 
 export default function Home() {
-  const [scrollY, setScrollY] = useState(0)
-  const heroRef = useRef<HTMLDivElement>(null)
-  const [isMounted, setIsMounted] = useState(false)
+  const [scrollY, setScrollY] = useState(0);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true)
+    setIsMounted(true);
 
     const handleScroll = () => {
-      setScrollY(window.scrollY)
-    }
+      setScrollY(window.scrollY);
+    };
 
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const calculateParallax = (factor: number) => {
-    return -scrollY * factor
-  }
+    return -scrollY * factor;
+  };
 
-  if (!isMounted) return null
+  if (!isMounted) return null;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-background/90 relative overflow-hidden">
@@ -53,22 +53,24 @@ export default function Home() {
       <header className="sticky top-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/40">
         <div className="container mx-auto py-4 px-4 flex justify-between items-center">
           <Link href="/" className="text-xl font-bold relative group">
-            <span className="text-foreground">Dev</span>
-            <span className="text-primary">Portfolio</span>
+            <span className="text-foreground">Djaafar</span>
+            <span className="text-primary">Hamri</span>
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <div className="flex items-center gap-4">
             <nav className="hidden md:flex gap-6">
-              {["about", "experience", "skills", "projects", "contact"].map((item) => (
-                <Link
-                  key={item}
-                  href={`#${item}`}
-                  className="text-muted-foreground hover:text-foreground transition-colors relative group uppercase text-sm tracking-wider"
-                >
-                  {item}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              ))}
+              {["about", "experience", "skills", "projects", "contact"].map(
+                (item) => (
+                  <Link
+                    key={item}
+                    href={`#${item}`}
+                    className="text-muted-foreground hover:text-foreground transition-colors relative group uppercase text-sm tracking-wider"
+                  >
+                    {item}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                )
+              )}
             </nav>
             <ThemeToggle />
           </div>
@@ -108,7 +110,9 @@ export default function Home() {
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 leading-tight">
                   <span className="text-primary">Djaafar A. Hamri</span>
                 </h1>
-                <h2 className="text-2xl md:text-3xl font-medium mb-6">Senior Full Stack Developer</h2>
+                <h2 className="text-2xl md:text-3xl font-medium mb-6">
+                  Senior Full Stack Developer
+                </h2>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="px-3 py-1 bg-primary/20 text-primary font-medium text-sm rounded-full border border-primary/30">
                     5+ Years Experience
@@ -124,23 +128,32 @@ export default function Home() {
                   </span>
                 </div>
                 <p className="text-xl text-muted-foreground max-w-2xl mb-8 leading-relaxed">
-                  I specialize in building scalable web applications with modern technologies. My experience spans from
-                  startups to enterprise solutions, focusing on clean code and exceptional user experiences.
+                  I specialize in building scalable web applications with modern
+                  technologies. My experience spans from startups to enterprise
+                  solutions, focusing on clean code and exceptional user
+                  experiences.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Button size="lg" className="group relative overflow-hidden">
-                    <span className="relative z-10">View Projects</span>
-                    <span className="absolute inset-0 bg-primary/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-                    <ArrowRight className="ml-2 h-4 w-4 relative z-10 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                  <Button variant="outline" size="lg" className="group relative overflow-hidden">
-                    <span className="relative z-10">Download Resume</span>
-                    <span className="absolute inset-0 bg-background translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-                  </Button>
-                  <Button variant="outline" size="lg" className="group relative overflow-hidden">
-                    <span className="relative z-10">Contact Me</span>
-                    <span className="absolute inset-0 bg-background translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
-                  </Button>
+                  <Link href={"#projects"}>
+                    <Button
+                      size="lg"
+                      className="group relative overflow-hidden"
+                    >
+                      <span className="relative z-10">View Projects</span>
+                      <span className="absolute inset-0 bg-primary/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                      <ArrowRight className="ml-2 h-4 w-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                  <Link href={"#contact"}>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="group relative overflow-hidden"
+                    >
+                      <span className="relative z-10">Contact Me</span>
+                      <span className="absolute inset-0 bg-background translate-y-full group-hover:translate-y-0 transition-transform duration-300"></span>
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -159,7 +172,9 @@ export default function Home() {
                 className="w-1 h-1 bg-primary rounded-full"
               />
             </div>
-            <span className="text-xs text-muted-foreground mt-2">Scroll Down</span>
+            <span className="text-xs text-muted-foreground mt-2">
+              Scroll Down
+            </span>
           </div>
         </section>
 
@@ -190,22 +205,37 @@ export default function Home() {
                   Passionate developer with proven industry experience
                 </h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  With over 5 years of professional experience, I've developed a strong expertise in building scalable
-                  web applications using modern JavaScript frameworks and cloud technologies.
+                  With over 5 years of professional experience, I've developed a
+                  strong expertise in building scalable web applications using
+                  modern JavaScript frameworks and cloud technologies.
                 </p>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  I thrive in collaborative environments and have a track record of delivering high-quality solutions
-                  that meet business objectives while providing exceptional user experiences.
+                  I thrive in collaborative environments and have a track record
+                  of delivering high-quality solutions that meet business
+                  objectives while providing exceptional user experiences.
                 </p>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  My approach combines technical excellence with strong communication skills, ensuring that projects are
-                  delivered on time and exceed expectations.
+                  My approach combines technical excellence with strong
+                  communication skills, ensuring that projects are delivered on
+                  time and exceed expectations.
                 </p>
                 <div className="flex gap-4">
                   {[
-                    { icon: Github, url: "https://github.com", label: "GitHub" },
-                    { icon: Linkedin, url: "https://linkedin.com", label: "LinkedIn" },
-                    { icon: Mail, url: "mailto:your.email@example.com", label: "Email" },
+                    {
+                      icon: Github,
+                      url: "https://github.com/djaafarhamri",
+                      label: "GitHub",
+                    },
+                    {
+                      icon: Linkedin,
+                      url: "https://www.linkedin.com/in/djaafar-hamri/",
+                      label: "LinkedIn",
+                    },
+                    {
+                      icon: Mail,
+                      url: "mailto:hamridjaafar12@gmail.com",
+                      label: "Email",
+                    },
                   ].map((social, index) => (
                     <Button
                       key={index}
@@ -214,7 +244,11 @@ export default function Home() {
                       className="relative group border border-border/50 backdrop-blur-sm bg-background/50"
                       asChild
                     >
-                      <Link href={social.url} target="_blank" rel="noopener noreferrer">
+                      <Link
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <social.icon className="h-5 w-5 group-hover:text-primary transition-colors" />
                         <span className="sr-only">{social.label}</span>
                         <span className="absolute -inset-0.5 scale-0 rounded-full bg-background/50 group-hover:scale-100 transition-transform duration-300"></span>
@@ -240,9 +274,12 @@ export default function Home() {
               <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary/10 text-secondary backdrop-blur-sm border border-secondary/20 mb-4">
                 Work History
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Professional Experience</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Professional Experience
+              </h2>
               <p className="text-muted-foreground">
-                A track record of delivering high-quality solutions across various industries
+                A track record of delivering high-quality solutions across
+                various industries
               </p>
             </motion.div>
 
@@ -250,27 +287,31 @@ export default function Home() {
               {[
                 {
                   role: "Senior Full Stack Developer",
-                  company: "Tech Innovations Inc.",
-                  period: "2021 - Present",
+                  company: "Temacina",
+                  period: "2023 - 2025",
                   description:
-                    "Led development of enterprise SaaS platform serving 50,000+ users. Implemented microservices architecture that improved system reliability by 35%. Mentored junior developers and established code quality standards.",
-                  technologies: ["React", "Node.js", "TypeScript", "AWS", "MongoDB"],
+                    "Developed and maintained multiple backend projects with Express.js and Node.js. Reduced response times by 20% through performance optimization. Collaborated with design team to implement pixel-perfect UIs.",
+                  technologies: [
+                    "React",
+                    "Node.js",
+                    "TypeScript",
+                    "GCP",
+                    "PostgreSQL",
+                  ],
                 },
                 {
                   role: "Full Stack Developer",
                   company: "Digital Solutions Ltd.",
-                  period: "2019 - 2021",
+                  period: "2020 - 2022",
                   description:
                     "Developed and maintained multiple client projects with React and Node.js. Reduced load times by 40% through performance optimization. Collaborated with design team to implement pixel-perfect UIs.",
-                  technologies: ["React", "Express.js", "PostgreSQL", "Docker", "Redux"],
-                },
-                {
-                  role: "Frontend Developer",
-                  company: "WebCraft Agency",
-                  period: "2017 - 2019",
-                  description:
-                    "Built responsive web applications for clients across various industries. Implemented CI/CD pipelines that reduced deployment time by 60%. Created reusable component libraries.",
-                  technologies: ["JavaScript", "HTML/CSS", "Vue.js", "Git", "Webpack"],
+                  technologies: [
+                    "React",
+                    "Express.js",
+                    "MongoDB",
+                    "Docker",
+                    "Redux",
+                  ],
                 },
               ].map((job, index) => (
                 <motion.div
@@ -292,7 +333,9 @@ export default function Home() {
                       </span>
                     </div>
                   </div>
-                  <p className="text-muted-foreground mb-4">{job.description}</p>
+                  <p className="text-muted-foreground mb-4">
+                    {job.description}
+                  </p>
                   <div className="flex flex-wrap gap-2">
                     {job.technologies.map((tech) => (
                       <span
@@ -310,7 +353,10 @@ export default function Home() {
         </ParallaxSection>
 
         {/* Skills Section */}
-        <ParallaxSection id="skills" className="py-24 md:py-32 relative overflow-hidden">
+        <ParallaxSection
+          id="skills"
+          className="py-24 md:py-32 relative overflow-hidden"
+        >
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background z-0"></div>
           <div className="container mx-auto px-4 relative z-10">
             <motion.div
@@ -323,27 +369,29 @@ export default function Home() {
               <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-accent/10 text-accent backdrop-blur-sm border border-accent/20 mb-4">
                 Expertise
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Technical Proficiency</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Technical Proficiency
+              </h2>
               <p className="text-muted-foreground">
-                A curated collection of technologies I've mastered to build powerful, scalable, and beautiful
-                applications
+                A curated collection of technologies I've mastered to build
+                powerful, scalable, and beautiful applications
               </p>
             </motion.div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
               {[
-                { name: "JavaScript", level: 90 },
-                { name: "TypeScript", level: 85 },
-                { name: "React", level: 92 },
+                { name: "JavaScript", level: 95 },
+                { name: "TypeScript", level: 95 },
+                { name: "React", level: 95 },
                 { name: "Next.js", level: 88 },
-                { name: "Node.js", level: 82 },
+                { name: "Node.js", level: 97 },
+                { name: "Nest.js", level: 88 },
                 { name: "CSS/SCSS", level: 90 },
-                { name: "Tailwind CSS", level: 95 },
-                { name: "GraphQL", level: 78 },
-                { name: "PostgreSQL", level: 75 },
-                { name: "MongoDB", level: 80 },
-                { name: "Git", level: 85 },
-                { name: "Docker", level: 70 },
+                { name: "Tailwind CSS", level: 90 },
+                { name: "PostgreSQL", level: 87 },
+                { name: "MongoDB", level: 83 },
+                { name: "Git", level: 90 },
+                { name: "Docker", level: 85 },
               ].map((skill, index) => (
                 <motion.div
                   key={skill.name}
@@ -372,35 +420,53 @@ export default function Home() {
               <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary backdrop-blur-sm border border-primary/20 mb-4">
                 Portfolio
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Featured Projects
+              </h2>
               <p className="text-muted-foreground">
-                A showcase of my most significant work, demonstrating my skills and problem-solving approach
+                A showcase of my most significant work, demonstrating my skills
+                and problem-solving approach
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  title: "E-Commerce Platform",
-                  description: "A full-stack e-commerce solution with payment processing and inventory management.",
-                  tags: ["Next.js", "Node.js", "MongoDB", "Stripe"],
-                  imageUrl: "/placeholder.svg?height=400&width=600",
+                  title: "Stylish E-Commerce Platform",
+                  description:
+                    "A full-stack e-commerce solution with payment processing and inventory management.",
+                  tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
+                  imageUrl: "/ecom.png",
+                  achievements: [
+                    "Built an admin dashboard for managing products, orders, and users",
+                    "Integrated RESTful APIs and JWT authentication for secure user access and seamless communication.",
+                  ],
                   demoUrl: "#",
                   repoUrl: "#",
                 },
                 {
-                  title: "Task Management App",
-                  description: "A collaborative task management tool with real-time updates and team features.",
-                  tags: ["React", "Firebase", "Tailwind CSS"],
+                  title: "Multiplayer Chess App",
+                  description:
+                    "A multiplayer chess platform to play against your friends, randoms or the chess engine",
+                  tags: ["React", "Node", "Socket IO"],
                   imageUrl: "/placeholder.svg?height=400&width=600",
+                  achievements: [
+                    "Created a real-time multiplayer chess platform using MERN stack.",
+                    "Integrated Socket IO enabling live gameplay, chat, and move synchronization",
+                  ],
                   demoUrl: "#",
                   repoUrl: "#",
                 },
                 {
                   title: "Portfolio Website",
-                  description: "A responsive portfolio website showcasing projects and skills.",
+                  description:
+                    "A responsive gaming like portfolio website with multiple themes.",
                   tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-                  imageUrl: "/placeholder.svg?height=400&width=600",
+                  imageUrl: "/portfolio.png",
+                  achievements: [
+                    "Designed and developed a gaming-themed portfolio using React and Tailwind CSS.",
+                    "Built a responsive and customizable layout to highlight skills, and projects in a creative and immersive way.",
+                  ],
                   demoUrl: "#",
                   repoUrl: "#",
                 },
@@ -434,10 +500,12 @@ export default function Home() {
                 <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary/10 text-secondary backdrop-blur-sm border border-secondary/20 mb-4">
                   Get In Touch
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Build Something Amazing Together</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  Let's Build Something Amazing Together
+                </h2>
                 <p className="text-muted-foreground max-w-xl mx-auto">
-                  Have a project in mind or want to discuss opportunities? I'm always open to new challenges and
-                  collaborations.
+                  Have a project in mind or want to discuss opportunities? I'm
+                  always open to new challenges and collaborations.
                 </p>
               </motion.div>
 
@@ -448,7 +516,11 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="backdrop-blur-sm bg-background/30 border border-border/50 rounded-xl p-6 md:p-8"
               >
-                <form className="space-y-6">
+                <form
+                  className="space-y-6"
+                  action="https://formsubmit.co/hamridjaafar12@gmail.com"
+                  method="POST"
+                >
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-sm font-medium">
@@ -456,6 +528,7 @@ export default function Home() {
                       </label>
                       <input
                         id="name"
+                        name="name"
                         className="w-full px-4 py-3 rounded-md bg-background/50 border border-border/50 focus:border-primary focus:ring-1 focus:ring-primary transition-all"
                         placeholder="Your Name"
                       />
@@ -467,6 +540,7 @@ export default function Home() {
                       <input
                         id="email"
                         type="email"
+                        name="email"
                         className="w-full px-4 py-3 rounded-md bg-background/50 border border-border/50 focus:border-primary focus:ring-1 focus:ring-primary transition-all"
                         placeholder="your.email@example.com"
                       />
@@ -478,6 +552,7 @@ export default function Home() {
                     </label>
                     <input
                       id="subject"
+                      name="subject"
                       className="w-full px-4 py-3 rounded-md bg-background/50 border border-border/50 focus:border-primary focus:ring-1 focus:ring-primary transition-all"
                       placeholder="How can I help you?"
                     />
@@ -488,6 +563,7 @@ export default function Home() {
                     </label>
                     <textarea
                       id="message"
+                      name="message"
                       rows={5}
                       className="w-full px-4 py-3 rounded-md bg-background/50 border border-border/50 focus:border-primary focus:ring-1 focus:ring-primary transition-all"
                       placeholder="Your message here..."
@@ -509,17 +585,31 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
               <Link href="/" className="text-xl font-bold">
-                <span className="text-foreground">Dev</span>
-                <span className="text-primary">Portfolio</span>
+                <span className="text-foreground">Djaafar</span>
+                <span className="text-primary">Hamri</span>
               </Link>
-              <p className="text-sm text-muted-foreground mt-2">Crafting digital experiences with code</p>
+              <p className="text-sm text-muted-foreground mt-2">
+                Crafting digital experiences with code
+              </p>
             </div>
             <div className="flex flex-col items-center md:items-end">
               <div className="flex gap-4 mb-4">
                 {[
-                  { icon: Github, url: "https://github.com", label: "GitHub" },
-                  { icon: Linkedin, url: "https://linkedin.com", label: "LinkedIn" },
-                  { icon: Mail, url: "mailto:your.email@example.com", label: "Email" },
+                  {
+                    icon: Github,
+                    url: "https://github.com/djaafarhamri",
+                    label: "GitHub",
+                  },
+                  {
+                    icon: Linkedin,
+                    url: "https://www.linkedin.com/in/djaafar-hamri",
+                    label: "LinkedIn",
+                  },
+                  {
+                    icon: Mail,
+                    url: "mailto:hamridjaafar12@gmail.com",
+                    label: "Email",
+                  },
                 ].map((social, index) => (
                   <Button
                     key={index}
@@ -528,7 +618,11 @@ export default function Home() {
                     className="relative group border border-border/50 backdrop-blur-sm bg-background/50"
                     asChild
                   >
-                    <Link href={social.url} target="_blank" rel="noopener noreferrer">
+                    <Link
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <social.icon className="h-4 w-4 group-hover:text-primary transition-colors" />
                       <span className="sr-only">{social.label}</span>
                     </Link>
@@ -543,6 +637,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
