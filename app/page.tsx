@@ -441,21 +441,21 @@ export default function Home() {
                     "Built an admin dashboard for managing products, orders, and users",
                     "Integrated RESTful APIs and JWT authentication for secure user access and seamless communication.",
                   ],
-                  demoUrl: "#",
-                  repoUrl: "#",
+                  demoUrl: "https://stylish-six-tawny.vercel.app",
+                  repoUrl: "https://github.com/djaafarhamri/stylish",
                 },
                 {
                   title: "Multiplayer Chess App",
                   description:
                     "A multiplayer chess platform to play against your friends, randoms or the chess engine",
                   tags: ["React", "Node", "Socket IO"],
-                  imageUrl: "/placeholder.svg?height=400&width=600",
+                  imageUrl: "/chess.png",
                   achievements: [
                     "Created a real-time multiplayer chess platform using MERN stack.",
                     "Integrated Socket IO enabling live gameplay, chat, and move synchronization",
                   ],
-                  demoUrl: "#",
-                  repoUrl: "#",
+                  demoUrl: "https://chess-v2-alpha.vercel.app",
+                  repoUrl: "https://github.com/djaafarhamri/ChessV2",
                 },
                 {
                   title: "Portfolio Website",
@@ -467,8 +467,8 @@ export default function Home() {
                     "Designed and developed a gaming-themed portfolio using React and Tailwind CSS.",
                     "Built a responsive and customizable layout to highlight skills, and projects in a creative and immersive way.",
                   ],
-                  demoUrl: "#",
-                  repoUrl: "#",
+                  demoUrl: "https://questfolio.vercel.app",
+                  repoUrl: "https://github.com/djaafarhamri/Questfolio",
                 },
               ].map((project, index) => (
                 <motion.div
