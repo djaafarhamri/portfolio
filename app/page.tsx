@@ -454,8 +454,8 @@ export default function Home() {
                     "Created a real-time multiplayer chess platform using MERN stack.",
                     "Integrated Socket IO enabling live gameplay, chat, and move synchronization",
                   ],
-                  demoUrl: "https://chess-v2-alpha.vercel.app",
-                  repoUrl: "https://github.com/djaafarhamri/ChessV2",
+                  demoUrl: "https://lagochess.onrender.com",
+                  repoUrl: "https://github.com/djaafarhamri/LagoChess",
                 },
                 {
                   title: "Portfolio Website",
