@@ -40,8 +40,8 @@ export function ThemeToggle() {
         animate={{ rotate: theme === "dark" ? 45 : 0 }}
         transition={{ duration: 0.5, type: "spring" }}
       >
-        <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-        <Moon className="absolute h-[1.2rem] w-[1.2rem] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        <Sun className="h-[1.2rem] w-[1.2rem] dark:rotate-0 dark:scale-100 transition-all -rotate-90 scale-0" />
+        <Moon className="absolute h-[1.2rem] w-[1.2rem] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 dark:rotate-90 dark:scale-0 transition-all rotate-0 scale-100" />
       </motion.div>
       <span className="sr-only">Toggle theme</span>
     </Button>
